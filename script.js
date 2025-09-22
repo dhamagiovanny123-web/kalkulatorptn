@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
+
         const num1 = parseFloat(input1);
         const num2 = parseFloat(input2);
 
@@ -84,11 +85,15 @@ document.addEventListener('DOMContentLoaded', function() {
     function showError(message) {
         resultDiv.textContent = message;
         resultDiv.classList.add('error');
+        resultDiv.style.color = '#ff0000'; // Tambahkan inline style untuk memastikan warna merah
+        resultDiv.style.fontWeight = 'bold';
         
-        // Remove error class after animation
+        // Remove error class and inline styles after animation
         setTimeout(() => {
             resultDiv.classList.remove('error');
-        }, 500);
+            resultDiv.style.color = '';
+            resultDiv.style.fontWeight = '';
+        }, 5000); // Perpanjang waktu menjadi 5 detik
     }
 
     // Real-time validation for inputs
